@@ -1,7 +1,11 @@
-<html lang="ar"><head>
+# Professional Game Website
+
+<html lang="ar">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>موقع ألعاب - Piro Ontan TV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css">
     <style>
         body {
             margin: 0;
@@ -13,28 +17,27 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            background-image: url("2.jpg"); /* خلفية مرعبة */
+            background-image: url("2.jpg");
             background-size: cover;
             background-attachment: fixed;
         }
 
-        /* تخصيص الشريط التمرير */
         ::-webkit-scrollbar {
-            width: 10px; /* عرض الشريط التمرير */
+            width: 10px;
         }
 
         ::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.7); /* خلفية المسار */
+            background: rgba(0, 0, 0, 0.7);
         }
 
         ::-webkit-scrollbar-thumb {
-            background-color: #650008; /* اللون الأساسي للشريط */
+            background-color: #650008;
             border-radius: 10px;
-            border: 2px solid rgba(0, 0, 0, 0.5); /* إضافة حافة مظللة حول الشريط */
+            border: 2px solid rgba(0, 0, 0, 0.5);
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background-color: #650008; /* تغيير اللون عند التمرير عليه */
+            background-color: #650008;
         }
 
         .header {
@@ -58,7 +61,34 @@
             font-size: 2em;
             margin: 0;
         }
-        
+
+        .menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        .menu-list {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .menu-list a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 5px 10px;
+        }
+
+        .menu-list a:hover {
+            background-color: #e63946;
+        }
+
         .game-container {
             display: flex;
             gap: 20px;
@@ -66,8 +96,8 @@
             justify-content: center;
             max-width: 1000px;
             padding: 20px;
-            overflow-y: auto; /* تمكين التمرير العمودي */
-            max-height: 80vh; /* تحديد الحد الأقصى للارتفاع */
+            overflow-y: auto;
+            max-height: 80vh;
         }
 
         .game-card {
@@ -126,16 +156,34 @@
         .download-btn:hover {
             background-color: #45a049;
         }
+
+        .footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <img src="3.jpg" alt="شعار Piro Ontan TV"> <!-- قم باستبدال الرابط برابط الشعار -->
+        <img src="3.jpg" alt="شعار Piro Ontan TV">
         <h1> Piro Ontan TV   ألعاب مقدمة من</h1>
     </div>
 
-    <div class="game-container">
-        <div class="game-card">
+    <div class="menu" onclick="toggleMenu()">
+        ☰
+    </div>
+    <div class="menu-list" id="menuList">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="game-container" data-aos="fade-up">
+        <div class="game-card" data-aos="zoom-in">
             <img src="4 (2).png" alt="لعبة 1">
             <h2>back rooms tunisia</h2>
             <p>ادخل عالم الظلام واكتشف المخاطر والأسرار المخيفة في هذه اللعبة المليئة بالإثارة.</p>
@@ -143,25 +191,22 @@
             <a href="back rooms tunisia beta apk.zip" class="download-btn">تنزيل اللعبة</a>
         </div>
 
-
-        <div class="game-card">
-             <img src="6.png" alt="لعبة 2">
-             <h2>Dors bad windows</h2>
+        <div class="game-card" data-aos="zoom-in">
+            <img src="6.png" alt="لعبة 2">
+            <h2>Dors bad windows</h2>
             <p> جرب كيف سيتغير نمط جهازك بشكل غريب ما رئيك ?  </p>
             <a href="#">android/pc</a>
             <a href="dors bad windows.zip" class="download-btn">تنزيل اللعبة</a>
         </div>
 
-        <div class="game-card">
+        <div class="game-card" data-aos="zoom-in">
             <img src="4 (6).png" alt="لعبة 2">
             <h2>Arona ace</h2>
             <p>واجه الأعداء في ساحات المعركة الشرسة واستخدم كل مهاراتك للبقاء على قيد الحياة.</p>
             <a href="https://www.mediafire.com/file/f1634gqt5pz2e9r/arona_ace_beta_1.2.3.zip/file?fbclid=IwY2xjawJbCARleHRuA2FlbQIxMAABHRYI-KkI9nmRy0pAGE6EWrTo6zumu5VAXfVFJVn0iYdjaRXMF9K7Qc-vLg_aem_KeyEv1oGeeHD_n1cd6Oufw">pc</a>
-            <!--a href="1.zip" class="download-btn">قريبا</a-->
         </div>
 
-        
-        <div class="game-card">
+        <div class="game-card" data-aos="zoom-in">
             <img src="4 (4).png" alt="لعبة 2">
             <h2>im craziy</h2>
             <p>برنامج اجراء مكالكمات عشوائية</p>
@@ -169,15 +214,27 @@
             <a href="im craziy apk beta a.zip" class="download-btn">تنزيل اللعبة</a>
         </div>
 
-        <div class="game-card">
+        <div class="game-card" data-aos="zoom-in">
             <img src="4 (1).png" alt="لعبة 2">
             <h2>D-max</h2>
             <p> ديماكس ورخ لا نحل عليكم باب بلا</p>
             <a href="#">android/pc</a>
             <a class="download-btn">قريبا</a>
         </div>
-        
     </div>
 
+    <div class="footer">
+        <p>&copy; 2023 Piro Ontan TV. All rights reserved.</p>
+    </div>
 
-</body></html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <script>
+        AOS.init();
+
+        function toggleMenu() {
+            const menuList = document.getElementById('menuList');
+            menuList.style.display = menuList.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
